@@ -9,6 +9,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  swapDevices = [{
+    device = "/swapfile";
+    size = 16 * 1024; # 16GB
+  }];
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+  
+
+
   networking.hostName = "msb-t14"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -50,8 +61,13 @@
     variant = "";
   };
 
+  services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "client";
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  hardware.sane.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -77,7 +93,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Martin Bieker";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "docker"  ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -94,6 +110,16 @@
     vimAlias = true;
     defaultEditor= true;
   };
+  programs.ausweisapp.enable = true;
+  programs.ausweisapp.openFirewall = true;
+  services.pcscd.enable = true;
+
+ # Fonts
+
+# 24.11 (or earlier)
+fonts.packages = with pkgs; [
+  (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+];
 
 
   # Allow unfree packages
@@ -120,11 +146,16 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.paperless.enable = true;
+  services.paperless.address = "0.0.0.0";
+
+  virtualisation.docker.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

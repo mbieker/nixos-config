@@ -11,6 +11,10 @@
       expect
       nextcloud-client
       jabref
+      vscode
+      poetry
+      remmina
+      okular
     ];
 
     # This needs to be set to your actual username.
