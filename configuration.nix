@@ -93,7 +93,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Martin Bieker";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "docker"  ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" "docker" "tss" ];
     packages = with pkgs; [
     #  thunderbird
     ];
