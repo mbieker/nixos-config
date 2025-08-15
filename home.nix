@@ -15,6 +15,7 @@
       poetry
       remmina
       kdePackages.okular
+      libreoffice
     ];
 
     # This needs to be set to your actual username.
