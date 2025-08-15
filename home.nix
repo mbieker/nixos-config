@@ -14,7 +14,7 @@
       vscode
       poetry
       remmina
-      okular
+      kdePackages.okular
     ];
 
     # This needs to be set to your actual username.

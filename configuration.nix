@@ -128,7 +128,7 @@ security.tpm2.tctiEnvironment.enable = true;  # TPM2TOOLS_TCTI and TPM2_PKCS11_T
 
 # 24.11 (or earlier)
 fonts.packages = with pkgs; [
-  (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+  nerd-fonts.symbols-only
 ];
 
 
