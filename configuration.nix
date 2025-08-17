@@ -12,8 +12,25 @@
       enable = true;
       devices = [ "nodev" ];
       efiSupport = true;
-      useOSProber = true;
+      useOSProber = false;
       default = "saved";
+      extraEntries = ''
+      menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-90D5-2798' {
+	savedefault
+	insmod part_gpt
+	insmod fat
+	search --no-floppy --fs-uuid --set=root 90D5-2798
+	chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+      }
+      menuentry 'Arch Linux (on /dev/nvme0n1p4)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-8795cbb5-510d-4af3-8d42-e56ec2abcac3' {
+      	savedefault
+      	insmod part_gpt
+      	insmod fat
+      	search --no-floppy --fs-uuid --set=root 90D5-2798
+      	linux /vmlinuz-linux root=/dev/nvme0n1p4
+      	initrd /initramfs-linux.img
+      }
+      '';
     };
   };
 
