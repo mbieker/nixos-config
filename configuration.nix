@@ -149,6 +149,16 @@ security.tpm2.tctiEnvironment.enable = true;  # TPM2TOOLS_TCTI and TPM2_PKCS11_T
   programs.ausweisapp.openFirewall = true;
   services.pcscd.enable = true;
 
+  services.dnsmasq = {
+    enable = false;
+    settings = {
+        interface = [ "enp7s0f4u2" ];
+    	bind-interfaces = true;
+	dhcp-authoritative = true;
+       dhcp-range = [ "192.168.1.100,192.168.1.200,1h" ];
+     };
+   };
+
  # Fonts
 
 # 24.11 (or earlier)
