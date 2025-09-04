@@ -192,8 +192,8 @@ fonts.packages = with pkgs; [
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  services.paperless.enable = true;
-  services.paperless.address = "0.0.0.0";
+  # services.paperless.enable = true;
+  # services.paperless.address = "0.0.0.0";
 
   virtualisation.docker.enable = true;
 
