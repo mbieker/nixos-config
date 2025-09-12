@@ -47,7 +47,15 @@
 	];
       };
     };
-
-
   };
+
+  services.syncthing = {
+    enable = true;
+    settings.gui = {
+      user = "mbieker";
+      pw = "syncpw";
+    };
+  };
+
+
 }
