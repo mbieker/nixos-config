@@ -15,16 +15,13 @@
     nixosConfigurations.msb-t14 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hardware-configuration/msb-t14.nix
-        ./configuration.nix 
+        ./msb-t14
         inputs.home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
+
             home-manager.useUserPackages = true;
-
-            # TODO replace ryan with your own username
-            home-manager.users.msb = import ./home.nix;
-
+            home-manager.users.msb = import ./msb-t14/home.nix;
           }
       ];
     };

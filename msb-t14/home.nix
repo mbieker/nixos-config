@@ -16,6 +16,8 @@
       remmina
       kdePackages.okular
       libreoffice
+      gcc
+      libtool
     ];
 
     # This needs to be set to your actual username.
