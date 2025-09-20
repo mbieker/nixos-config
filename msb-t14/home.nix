@@ -61,18 +61,20 @@
 
   services.syncthing = {
     enable = true;
-    settings.gui = {
-      user = "mbieker";
-      pw = "syncpw";
-    };
-    devices = {
-      "vps"     = { id = "QDEC4DC-Y7EFCC3-VYHLP3I-ZYBH3CC-K53PJHG-35OFWXM-VRFEHQK-WEWYCAP"; };
-      "Pixel 6" = { id = "AFZXF6U-Q372KMD-OYVKW3S-AGKU65R-ZX6EDOW-H5GYNIM-DU6DHO4-WMUYRQE"; };
-    };
-    folders = {
-      "org-files" = {
-        path = "/home/msb/org";
-        devices = [ "vps" "Pixel 6" ];
+    settings = {
+      gui = {
+        user = "mbieker";
+        pw = "syncpw";
+      };
+      devices = {
+        "vps"     = { id = "QDEC4DC-Y7EFCC3-VYHLP3I-ZYBH3CC-K53PJHG-35OFWXM-VRFEHQK-WEWYCAP"; };
+        "Pixel 6" = { id = "AFZXF6U-Q372KMD-OYVKW3S-AGKU65R-ZX6EDOW-H5GYNIM-DU6DHO4-WMUYRQE"; };
+      };
+      folders = {
+        "org-files" = {
+          path = "/home/msb/org";
+          devices = [ "vps" "Pixel 6" ];
+        };
       };
     };
   };
