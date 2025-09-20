@@ -22,6 +22,13 @@
 
     ];
 
+    # Dotfiles
+    file.".config/doom" = {
+    source = ../home-manager/doom;  # local directory in your repo
+    recursive = true;    # important! handles directories
+    };
+
+
     # This needs to be set to your actual username.
     username = "msb";
     homeDirectory = "/home/msb";
