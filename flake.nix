@@ -12,15 +12,15 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
-      url = "github:nix-community/home-manager";
-      # The `follows` keyword in inputs is used for inheritance.
-      # Here, `inputs.nixpkgs` of home-manager is kept consistent with
-      # the `inputs.nixpkgs` of the current flake,
-      # to avoid problems caused by different versions of nixpkgs.
-      inputs.nixpkgs.follows = "nixpkgs";
+    inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+  in
+  {
     nixosConfigurations.msb-t14 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -47,5 +47,20 @@
         ./vps
       ];
     };
+
+      homeConfigurations."msb-t14" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [ ./home-manager/msb-t14.nix ];
+      };
+      homeConfigurations."work" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [];
   };
+};
 }

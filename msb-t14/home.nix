@@ -2,22 +2,24 @@
   home = {
     # Install packages from https://search.nixos.org/packages
     packages = with pkgs; [
-      zoom-us
+      #Important
       cowsay
+      # Communication
       thunderbird
       telegram-desktop
       mattermost-desktop
-      inkscape
-      expect
-      nextcloud-client
-      jabref
-      vscode
-      poetry
-      remmina
+      zoom-us
+
+      # Office
       kdePackages.okular
       libreoffice
-      gcc
-      libtool
+      inkscape
+      jabref
+
+      # Work
+      remmina
+      nextcloud-client
+
     ];
 
     # This needs to be set to your actual username.
