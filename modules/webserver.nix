@@ -26,7 +26,7 @@ in
       enable = true;
       package = pkgs.caddy.withPlugins {
           plugins = [ "github.com/caddy-dns/desec@v1.0.1" ];
-	  hash = "sha256-ZCQzg2X2u3QA0SLJaLlU5SFcANLIP02+5E3pEEd7kUk=";
+	  hash = "sha256-H8G67gJefBBNRMCsaAL29H5OJJ73+qZAepjbPOAtOck=";
       };
       #acmeCA = "https://acme-staging-v02.api.letsencrypt.org/directory";
       acmeCA = "https://acme-v02.api.letsencrypt.org/directory";
