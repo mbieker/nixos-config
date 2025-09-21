@@ -77,6 +77,7 @@
       };
       folders = {
         "org-files" = {
+	  id = "hw99d-upwdv";
           path = "/home/msb/org";
           devices = [ "vps" "Pixel 6" ];
         };
