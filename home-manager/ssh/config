@@ -1,0 +1,60 @@
+Include config_e5
+
+Host vhdlcompile3
+  HostName vhdlcompile3.cb.uni-bonn.de
+  User bieker
+
+Host vhdlpc01
+       HostName 10.101.36.94
+       User mbieker
+
+Host bcm01 lbgw tfcfe01 ui
+	User mbieker
+        ForwardX11 yes
+        ForwardX11Trusted yes
+        ForwardAgent yes
+Host bcm01
+Hostname bcm01.lbdaq.cern.ch
+        ProxyJump lbgw
+Host tfcfe01
+        Hostname tfcfe01.lbdaq.cern.ch
+        ProxyJump lbgw
+Host ui
+	Hostname ui.lbdaq.cern.ch
+        ProxyJump lbgw
+Host lbgw
+	Hostname lbgw.cern.ch
+        ProxyJump lxplus
+Host lxplus
+	Hostname lxplus.cern.ch
+	User mbieker
+        ForwardX11 yes
+        ForwardX11Trusted yes
+        ForwardAgent yes
+
+Match originalhost lbfwd
+	User mbieker
+	Hostname lxtunnel.cern.ch
+        RemoteCommand echo 'Connection successful. Press Enter to disconnect.'; read -s
+        LocalForward localhost:33898 lbui-misc.cern.ch:3389
+
+Match originalhost lbfwd-alt
+	User mbieker
+	Hostname lxplus.cern.ch
+        RemoteCommand echo 'Connection successful. Press Enter to disconnect.'; read -s
+        LocalForward localhost:33898 lbui-misc.cern.ch:3389
+
+Match originalhost dofwd
+        Hostname login.e5.physik.tu-dortmund.de
+        RemoteCommand echo 'Connection successful. Press Enter to disconnect.'; read -s
+        LocalForward localhost:33898 bcm-alma9.e5.physik.tu-dortmund.de:3389
+
+  
+Host login
+        Hostname login.e5.physik.tu-dortmund.de
+        User mbieker
+
+Host bcm-desktop
+        HostName bcm-desktop.e5.physik.tu-dortmund.de
+        User bcmdev
+        ProxyJump login

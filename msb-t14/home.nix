@@ -23,9 +23,19 @@
     ];
 
     # Dotfiles
-    file.".config/doom" = {
-      source = ../home-manager/doom;  # local directory in your repo
-      recursive = true;    # important! handles directories
+    file = {
+      ".config/doom" = {
+        source = ../home-manager/doom;  # local directory in your repo
+        recursive = true;    # important! handles directories
+      };
+
+      ".ssh/config" = {
+        source = ../home-manager/ssh/config;
+      };
+
+      ".ssh/config_e5" = {
+        source = ../home-manager/ssh/config_e5;
+      };
     };
 
     # This needs to be set to your actual username.

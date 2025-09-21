@@ -1,0 +1,31 @@
+IgnoreUnknown UseKeychain
+
+Host login.app
+    Hostname login.app.physik.tu-dortmund.de
+
+Host interactive login rhino axolotl bam bernhard bob britta condor dietrich eve frettchen johannes kai klaus-wacker matthias sam steffi tarek ipmimaster ipmimaster2 lhcb-cache2 nfshome2 infra-1 infra-2
+    Hostname %h.e5.physik.tu-dortmund.de
+
+Host git.e5.physik.tu-dortmund.de
+    IdentityFile /home/msb/.ssh/e5.key
+
+Match host *.e5.physik.tu-dortmund.de,!login.e5.physik.tu-dortmund.de,!git.e5.physik.tu-dortmund.de exec "! ip a | grep 129.217.166"
+    ProxyJump login
+
+Match host infra-*.e5.physik.tu-dortmund.de
+    User cloudadmin
+
+Match host *.e5.physik.tu-dortmund.de,login.app.physik.tu-dortmund.de,!git.e5.physik.tu-dortmund.de
+    User mbieker
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ForwardAgent yes
+    XAuthLocation /run/current-system/sw/bin/xauth
+    TCPKeepAlive no
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
+    UseKeychain yes
+
+# vim: set ft=sshconfig:
