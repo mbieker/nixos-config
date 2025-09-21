@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, config, ... }: {
   home = {
     # Install packages from https://search.nixos.org/packages
     packages = with pkgs; [
@@ -43,6 +43,10 @@
       enable = true;
       userName = "Martin Bieker";
       userEmail = "martin.bieker@udo.edu";
+    };
+
+    emacs = {
+      enable = true;
     };
 
     zsh = {
