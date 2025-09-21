@@ -12,8 +12,8 @@ in
 {
   # You can import other NixOS modules here
   imports = [
-     ./disk-config.nix
-     ./hardware-configuration.nix
+    ./disk-config.nix
+    ./hardware-configuration.nix
     ../modules/networking.nix
     ../modules/webserver.nix
     ../modules/docspell.nix
@@ -29,22 +29,22 @@ in
   networking.interfaces.ens3.ipv4.addresses = [ {
     address = "178.254.36.175";
     prefixLength = 22;
-    } ];
+  } ];
   networking.defaultGateway = "178.254.36.1";
   networking.nameservers = [ "178.254.16.151" "178.254.16.141" ];
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.efiSupport = true;
   boot.loader.timeout = 2;
-   time.timeZone = "Europe/Berlin";
+  time.timeZone = "Europe/Berlin";
 
 
-   i18n.defaultLocale = "en_US.UTF-8";
-   console = {
-     font = "Lat2-Terminus16";
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
     # keyMap = "de";
-     useXkbConfig = true; # use xkb.options in tty.
-   };
+    useXkbConfig = true; # use xkb.options in tty.
+  };
 
   services.xserver.enable = false;
 
@@ -54,7 +54,7 @@ in
       initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-	"ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIUmAc1Ju8VVUCs/Ryap1FIAphlyRCQ1CkPGZfjSG2/64ilVHstHZgZZk1cJ3yEYNl4RI6tPPVTuRaH5Wia77/8= mbieker@arch-t14"
+	      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIUmAc1Ju8VVUCs/Ryap1FIAphlyRCQ1CkPGZfjSG2/64ilVHstHZgZZk1cJ3yEYNl4RI6tPPVTuRaH5Wia77/8= mbieker@arch-t14"
       ];
       extraGroups = ["wheel"];
     };
