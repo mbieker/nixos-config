@@ -60,4 +60,5 @@ Host bcm-desktop
         ProxyJump login
 
 Host vps
-	Hostname mbieker
+	Hostname vps.tail043e0.ts.net
+	User mbieker
