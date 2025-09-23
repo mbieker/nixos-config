@@ -58,3 +58,6 @@ Host bcm-desktop
         HostName bcm-desktop.e5.physik.tu-dortmund.de
         User bcmdev
         ProxyJump login
+
+Host vps
+	Hostname mbieker
