@@ -62,6 +62,14 @@
     zsh = {
       enable = true;
 
+      shellAliases = {
+        ec = "emacsclient";
+      };
+
+      sessionVariables = {
+        EDITOR="emacsclient";
+      };
+
       oh-my-zsh = {
         enable = true;
         theme = "agnoster";
