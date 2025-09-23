@@ -1,0 +1,15 @@
+# NixOS configurations
+
+## Laptop
+
+``` shell
+sudo nixos-rebuild switch  --flake .#msb-t14
+```
+
+## VPS
+
+with tailscale enabled
+
+``` shell
+ nixos-rebuild build --flake .#vps --target-host root@vps
+```
