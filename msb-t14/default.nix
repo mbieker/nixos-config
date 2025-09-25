@@ -119,6 +119,11 @@
     #media-session.enable = true;
   };
 
+  services.ollama = {
+    enable = true;
+    host = "0.0.0.0";
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
