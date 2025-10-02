@@ -12,6 +12,14 @@ Host vhdlpc01
 HostName 10.101.36.94
 User mbieker
 
+Host dogma-hf-pi
+Hostname dogma-hf-pi.cb.uni-bonn.de
+User dogma
+
+Host dogma-hf-pi-local
+Hostname 192.168.1.1
+User dogma
+
 Host toftest
 Hostname 10.101.36.163
 User tof
