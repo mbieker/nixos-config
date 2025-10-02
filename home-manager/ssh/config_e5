@@ -26,6 +26,5 @@ Match host *.e5.physik.tu-dortmund.de,login.app.physik.tu-dortmund.de,!git.e5.ph
     TCPKeepAlive no
     ServerAliveInterval 60
     ServerAliveCountMax 10
-    UseKeychain yes
 
 # vim: set ft=sshconfig:
