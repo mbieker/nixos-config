@@ -64,6 +64,7 @@
 
       shellAliases = {
         ec = "emacsclient";
+        vi = "emacsclient";
       };
 
       sessionVariables = {
