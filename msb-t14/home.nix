@@ -15,6 +15,8 @@
       libreoffice
       inkscape
       jabref
+      typst
+      zathura
 
       # Work
       remmina
