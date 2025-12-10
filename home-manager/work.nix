@@ -18,8 +18,26 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs;[ 
-    typst
-    zathura
+      #Important
+      cowsay
+      # Communication
+      thunderbird
+      telegram-desktop
+      mattermost-desktop
+      zoom-us
+
+      # Office
+      kdePackages.okular
+      libreoffice
+      inkscape
+      jabref
+      typst
+      zathura
+
+      # Work
+      remmina
+      nextcloud-client
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -39,8 +57,42 @@
       };
     };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
+
+    git = {
+      enable = true;
+      userName = "Martin Bieker";
+      userEmail = "martin.bieker@udo.edu";
+    };
+
+    emacs = {
+      enable = true;
+    };
+
+    zsh = {
+      enable = true;
+
+      shellAliases = {
+        ec = "emacsclient";
+        vi = "emacsclient";
+      };
+
+      sessionVariables = {
+        EDITOR="emacsclient";
+      };
+
+      oh-my-zsh = {
+        enable = true;
+        theme = "agnoster";
+        plugins = [
+          "sudo"
+          "git"
+        ];
+      };
+    };
+  };
   
   services.syncthing.enable = true;
 }
