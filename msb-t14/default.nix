@@ -190,6 +190,7 @@ fonts.packages = with pkgs; [
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   gnomeExtensions.pop-shell
+  networkmanager-openconnect
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
