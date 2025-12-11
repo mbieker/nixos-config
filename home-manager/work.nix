@@ -24,7 +24,7 @@
       thunderbird
       telegram-desktop
       mattermost-desktop
-      zoom-us
+      #zoom-us hanelled via windows
 
       # Office
       kdePackages.okular
@@ -63,8 +63,10 @@
 
     git = {
       enable = true;
-      userName = "Martin Bieker";
-      userEmail = "martin.bieker@udo.edu";
+      settings.user = {
+        name = "Martin Bieker";
+        email = "martin.bieker@udo.edu";
+      };
     };
 
     emacs = {
