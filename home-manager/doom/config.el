@@ -73,8 +73,23 @@
         time-stamp
         ports))
 (vhdl-ext-mode-setup)
+
 (add-hook 'vhdl-mode-hook #'vhdl-ext-mode)
-  )
+ (with-eval-after-load 'eglot
+
+  (with-eval-after-load 'typst-ts-mode
+
+    (add-to-list 'eglot-server-programs
+
+                 `((typst-ts-mode) .
+
+                   ,(eglot-alternatives `(,typst-ts-lsp-download-path
+
+                                          "tinymist"
+
+                                          "typst-lsp")))))) )
+(use-package websocket)
+(use-package typst-preview)
 
 (setq tramp-terminal-type "tramp")
 

@@ -51,3 +51,6 @@
 (package! org-gcal)
 (package! vhdl-ts-mode)
 (package! vhdl-ext)
+(package! websocket)
+(package! typst-ts-mode)
+(package! typst-preview)

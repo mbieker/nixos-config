@@ -16,6 +16,7 @@
       inkscape
       jabref
       typst
+      tinymist
       zathura
 
       # Work
