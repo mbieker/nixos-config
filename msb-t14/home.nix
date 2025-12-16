@@ -17,6 +17,8 @@
       jabref
       typst
       tinymist
+      tree-sitter-grammars.tree-sitter-typst
+      ltex-ls-plus
       zathura
 
       # Work
