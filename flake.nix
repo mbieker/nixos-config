@@ -1,13 +1,12 @@
 # /etc/nixos/flake.nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     docspell.url = "github:eikek/docspell";
-    #docspell.follows = "nixpkgs";
+    docspell.inputs.nixpkgs.follows = "nixpkgs";
 
     caddy.url = "github:vincentbernat/caddy-nix";
-    #caddy.follows = "nixpkgs";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
