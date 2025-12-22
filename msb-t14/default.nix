@@ -191,6 +191,10 @@ fonts.packages = with pkgs; [
   environment.systemPackages = with pkgs; [
   gnomeExtensions.pop-shell
   networkmanager-openconnect
+  #
+  htop
+  ldns # drill
+  
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
