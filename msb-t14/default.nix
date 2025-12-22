@@ -194,6 +194,7 @@ fonts.packages = with pkgs; [
   #
   htop
   ldns # drill
+  killall
   
   ];
 
