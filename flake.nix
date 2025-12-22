@@ -60,7 +60,7 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [./home-manager/work.nix];
+        modules = [./home-manager/home.nix];
   };
 };
 }
