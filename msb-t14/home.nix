@@ -5,6 +5,7 @@
   home = {
     # Install packages from https://search.nixos.org/packages
     packages = with pkgs; [
+      kopia-ui
       zoom-us
     ];
 
