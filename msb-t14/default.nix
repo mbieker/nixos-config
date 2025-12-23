@@ -139,6 +139,7 @@
   };
 
   # Install firefox.
+  programs.dconf.enable = true;
   programs.firefox.enable = true;
   
   programs.zsh.enable = true;
@@ -190,6 +191,9 @@ fonts.packages = with pkgs; [
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   gnomeExtensions.pop-shell
+  gsettings-desktop-schemas
+  gtk3
+  gtk4
   networkmanager-openconnect
   #
   htop
