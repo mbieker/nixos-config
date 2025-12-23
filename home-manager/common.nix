@@ -19,6 +19,7 @@
 
       # Work
       remmina
+      xpra
       nextcloud-client
 
   ];
