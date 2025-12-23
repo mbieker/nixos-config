@@ -85,9 +85,10 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Budgie Desktop environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # Enable the COSMIC login manager
+  services.displayManager.cosmic-greeter.enable = true;
+  # Enable the COSMIC desktop environment
+  services.desktopManager.cosmic.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -190,10 +191,10 @@ fonts.packages = with pkgs; [
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  gnomeExtensions.pop-shell
-  gsettings-desktop-schemas
-  gtk3
-  gtk4
+  # gnomeExtensions.pop-shell
+  # gsettings-desktop-schemas
+  # gtk3
+  # gtk4
   networkmanager-openconnect
   #
   htop

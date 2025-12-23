@@ -7,6 +7,7 @@
     packages = with pkgs; [
       kopia-ui
       zoom-us
+      bitwarden-desktop
     ];
 
     username = "msb";
