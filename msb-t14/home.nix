@@ -1,6 +1,7 @@
 { lib, pkgs, config, ... }: {
   imports = [
     ../home-manager/common.nix
+    ../home-manager/thunderbird.nix
   ];
   home = {
     # Install packages from https://search.nixos.org/packages
