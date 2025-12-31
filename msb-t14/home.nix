@@ -9,6 +9,7 @@
       kopia-ui
       zoom-us
       bitwarden-desktop
+      kopia-ui
     ];
 
     username = "msb";
