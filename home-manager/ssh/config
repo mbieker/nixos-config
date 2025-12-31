@@ -4,6 +4,11 @@ Hostname vps.tail043e0.ts.net
 User mbieker
 
 # Bonn hosts
+Host fdi-privat
+Hostname fdi-sftp.uni-bonn.de
+User mbieker
+
+
 Host vhdlcompile3
 HostName vhdlcompile3.cb.uni-bonn.de
 User bieker
