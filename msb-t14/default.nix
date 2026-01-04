@@ -55,6 +55,7 @@
   networking.networkmanager.enable = true;
   networking.networkmanager.plugins = [
     pkgs.networkmanager-openvpn
+    pkgs.networkmanager-openconnect
   ];
 
   # Set your time zone.
