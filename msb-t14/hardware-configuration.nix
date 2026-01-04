@@ -12,10 +12,22 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-
   fileSystems."/" =
-    { device = "/dev/disk/by-partlabel/nixos";
-      fsType = "ext4";
+    { device = "/dev/disk/by-partlabel/linux";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-partlabel/linux";
+      fsType = "btrfs";
+      options = [ "subvol=home" "compress=zstd" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-partlabel/linux";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime"];
     };
 
   fileSystems."/boot" =
