@@ -197,7 +197,7 @@ fonts.packages = with pkgs; [
   ldns # drill
   killall
   sshfs
-  
+  pcsc-cyberjack
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
