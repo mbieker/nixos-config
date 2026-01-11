@@ -19,6 +19,7 @@ in
     ../modules/docspell.nix
     ../modules/paperless.nix
     ../modules/syncthing.nix
+    ../modules/silverbullet.nix
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
